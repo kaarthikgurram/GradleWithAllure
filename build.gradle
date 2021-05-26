@@ -12,6 +12,14 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    //Spring
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.3'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-test', version: '1.4.0.RELEASE'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.5.0'
+
+    // Selenium
+    implementation "org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6"
 }
 
 test {
