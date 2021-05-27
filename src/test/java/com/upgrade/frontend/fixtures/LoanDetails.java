@@ -1,4 +1,4 @@
-package com.upgrade.frontEnd.Fixtures;
+package com.upgrade.frontend.fixtures;
 
 public class LoanDetails {
 

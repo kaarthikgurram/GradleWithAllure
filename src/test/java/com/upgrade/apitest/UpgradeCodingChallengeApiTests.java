@@ -1,8 +1,8 @@
-package com.upgrade.apiTest;
+package com.upgrade.apitest;
 
-import com.upgrade.apiTest.client.UpgradeApiClient;
-import com.upgrade.apiTest.fixtures.UpgradeRequestContext;
-import com.upgrade.apiTest.validations.UpgradeApiValidation;
+import com.upgrade.apitest.client.UpgradeApiClient;
+import com.upgrade.apitest.fixtures.UpgradeRequestContext;
+import com.upgrade.apitest.validations.UpgradeApiValidation;
 import io.restassured.response.Response;
 import org.json.JSONException;
 import org.junit.jupiter.api.BeforeEach;

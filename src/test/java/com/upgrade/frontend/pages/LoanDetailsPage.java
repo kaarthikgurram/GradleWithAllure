@@ -1,18 +1,17 @@
-package com.upgrade.frontEnd.validation;
+package com.upgrade.frontend.pages;
 
-import com.upgrade.frontEnd.Fixtures.LoanDetails;
-import com.upgrade.frontEnd.util.browser.BrowserActions;
+import com.upgrade.frontend.fixtures.LoanDetails;
+import com.upgrade.frontend.util.browser.BrowserActions;
 import java.util.concurrent.TimeUnit;
-import junit.framework.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoanDetailsValidation {
-
+public class LoanDetailsPage {
   private final BrowserActions browserActions;
   private WebDriver webDriver;
+  private LoanDetails loanDetails;
 
   @FindBy(xpath = "//span[contains(@class, 'guKkvw')]")
   private WebElement loanAmount;
@@ -29,20 +28,32 @@ public class LoanDetailsValidation {
   @FindBy(xpath = "(//div[@class = 'section--xs'])[3]")
   private WebElement apr;
 
-  public LoanDetailsValidation(WebDriver webDriver) {
+  @FindBy(xpath = "//label[@class = 'header-nav__toggle']")
+  private WebElement menu;
+
+  @FindBy(xpath = "//a[text()='Sign Out']")
+  private WebElement signOut;
+
+  public LoanDetailsPage(WebDriver webDriver) {
     PageFactory.initElements(webDriver, this);
     browserActions = new BrowserActions(webDriver);
     this.webDriver = webDriver;
   }
 
-  public void validateLoanDetails(LoanDetails loanDetails) {
-    System.out.println(loanDetails.getLoanAmount());
-    System.out.println(loanDetails.getTerm());
+  public LoanDetails fetchLoanDetails() {
+    loanDetails = new LoanDetails();
     webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    Assert.assertEquals(loanAmount.getText(), loanDetails.getLoanAmount());
-    Assert.assertEquals(monthlyPayment.getText(), loanDetails.getMonthlyPayment());
-    Assert.assertEquals(monthTerm.getText(), loanDetails.getTerm());
-    Assert.assertEquals(interestRate.getText(), loanDetails.getInterestRate());
-    Assert.assertEquals(apr.getText(), loanDetails.getApr());
+    loanDetails.setLoanAmount(loanAmount.getText());
+    loanDetails.setMonthlyPayment(monthlyPayment.getText());
+    loanDetails.setInterestRate(interestRate.getText());
+    loanDetails.setTerm(monthTerm.getText());
+    loanDetails.setApr(apr.getText());
+
+    return loanDetails;
+  }
+
+  public void signOut() {
+    browserActions.moveTheCursorToElementAndClick(menu);
+    browserActions.moveTheCursorToElementAndClick(signOut);
   }
 }

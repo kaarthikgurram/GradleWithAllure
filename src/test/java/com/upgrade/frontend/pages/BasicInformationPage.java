@@ -1,7 +1,7 @@
-package com.upgrade.frontEnd.pages;
+package com.upgrade.frontend.pages;
 
-import com.upgrade.frontEnd.Fixtures.BasicInformationFixture;
-import com.upgrade.frontEnd.util.browser.BrowserActions;
+import com.upgrade.frontend.fixtures.BasicInformationFixture;
+import com.upgrade.frontend.util.browser.BrowserActions;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

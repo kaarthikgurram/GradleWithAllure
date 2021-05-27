@@ -1,4 +1,4 @@
-package com.upgrade.frontEnd.util.browser;
+package com.upgrade.frontend.util.browser;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

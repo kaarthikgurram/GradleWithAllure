@@ -1,14 +1,13 @@
-package com.upgrade.frontEnd.pages;
+package com.upgrade.frontend.pages;
 
-import com.upgrade.frontEnd.Fixtures.AccountContext;
-import com.upgrade.frontEnd.util.browser.BrowserActions;
+import com.upgrade.frontend.fixtures.AccountContext;
+import com.upgrade.frontend.util.browser.BrowserActions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-
+public class CreateAccountPage {
   private final BrowserActions browserActions;
   private WebDriver webDriver;
 
@@ -18,22 +17,24 @@ public class LoginPage {
   @FindBy(xpath = "//input[@name='password']")
   private WebElement password;
 
-  @FindBy(xpath = "//button[@type='submit']")
-  private WebElement signIn;
+  @FindBy(xpath = "//div[contains(@class, 'gTusOv ')]")
+  private WebElement agreementCheckbox;
 
-  public LoginPage(WebDriver webDriver) {
+  @FindBy(xpath = "//button[@type='submit']")
+  private WebElement checkYourRateButton;
+
+  public CreateAccountPage(WebDriver webDriver) {
     PageFactory.initElements(webDriver, this);
     browserActions = new BrowserActions(webDriver);
     this.webDriver = webDriver;
   }
 
-  public void gotoLogInPage() {
-    webDriver.navigate().to("https://www.credify.tech/portal/login");
-  }
-
-  public void logInHomePage() {
+  public void createAccount() {
     browserActions.enterTextInTextField(emailAddress, AccountContext.getEmailAddress());
     browserActions.enterTextInTextField(password, AccountContext.getPassword());
-    browserActions.moveTheCursorToElementAndClick(signIn);
+    agreementCheckbox.click();
+    checkYourRateButton.click();
+    System.out.println(AccountContext.getEmailAddress());
+    System.out.println(AccountContext.getPassword());
   }
 }

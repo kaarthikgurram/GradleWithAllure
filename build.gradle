@@ -1,6 +1,10 @@
 plugins {
     id 'java'
+    id 'checkstyle'
 }
+
+apply plugin: 'java';
+apply plugin: 'checkstyle';
 
 group 'org.example'
 version '1.0-SNAPSHOT'

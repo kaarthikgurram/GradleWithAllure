@@ -1,6 +1,6 @@
-package com.upgrade.frontEnd.pages;
+package com.upgrade.frontend.pages;
 
-import com.upgrade.frontEnd.util.browser.BrowserActions;
+import com.upgrade.frontend.util.browser.BrowserActions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

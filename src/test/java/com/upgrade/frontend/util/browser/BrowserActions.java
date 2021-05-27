@@ -1,4 +1,4 @@
-package com.upgrade.frontEnd.util.browser;
+package com.upgrade.frontend.util.browser;
 
 import java.time.Duration;
 import org.openqa.selenium.NoSuchElementException;
