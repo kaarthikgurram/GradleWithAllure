@@ -11,7 +11,7 @@ import org.junit.Assert;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UpgardeApiValidation {
+public class UpgradeApiValidation {
 
   public void validateApprovedApiResponse(Response response) throws JSONException {
 

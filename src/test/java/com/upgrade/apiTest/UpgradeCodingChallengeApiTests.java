@@ -2,7 +2,7 @@ package com.upgrade.apiTest;
 
 import com.upgrade.apiTest.client.UpgradeApiClient;
 import com.upgrade.apiTest.fixtures.UpgradeRequestContext;
-import com.upgrade.apiTest.validations.UpgardeApiValidation;
+import com.upgrade.apiTest.validations.UpgradeApiValidation;
 import io.restassured.response.Response;
 import org.json.JSONException;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,13 +18,13 @@ public class UpgradeCodingChallengeApiTests {
   UpgradeRequestContext upgradeRequestContext;
 
   @Autowired
-  UpgardeApiValidation upgardeApiValidation;
+  UpgradeApiValidation upgardeApiValidation;
 
   @BeforeEach
   public void beforeEach() {
     upgradeApiClient = new UpgradeApiClient();
     upgradeRequestContext = new UpgradeRequestContext();
-    upgardeApiValidation = new UpgardeApiValidation();
+    upgardeApiValidation = new UpgradeApiValidation();
   }
 
   @Test

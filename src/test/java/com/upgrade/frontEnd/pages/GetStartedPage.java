@@ -7,32 +7,31 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class GetStartedPage {
-    private final BrowserActions browserActions;
-    private WebDriver webDriver;
+  private final BrowserActions browserActions;
+  private WebDriver webDriver;
 
+  @FindBy(xpath = "//input[contains(@class, 'bYEvPH ')]")
+  private WebElement loanAmount;
 
-    @FindBy(xpath = "//input[contains(@class, 'bYEvPH ')]")
-    private WebElement loanAmount;
+  @FindBy(xpath = "//select[contains(@class, 'kniQaM')]")
+  private WebElement loanPurposeDropDown;
 
-    @FindBy(xpath = "//select[contains(@class, 'kniQaM')]")
-    private WebElement loanPurposeDropDown;
+  @FindBy(xpath = "//button[@type='submit']")
+  private WebElement checkYourRate;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement checkYourRate;
+  public GetStartedPage(WebDriver webDriver) {
+    PageFactory.initElements(webDriver, this);
+    browserActions = new BrowserActions(webDriver);
+    this.webDriver = webDriver;
+  }
 
-    public GetStartedPage(WebDriver webDriver) {
-        PageFactory.initElements(webDriver, this);
-        browserActions = new BrowserActions(webDriver);
-        this.webDriver = webDriver;
-    }
+  public void fillGetStartedPage(String text) {
+    browserActions.enterTextInTextField(loanAmount, "2000");
+    browserActions.selectElementFromTheDropdownMenuByVisibleText(text, loanPurposeDropDown);
+    checkYourRate.click();
+  }
 
-    public void fillGetStartedPage(String text) {
-        browserActions.enterTextInTextField(loanAmount, "2000");
-        browserActions.selectElementFromTheDropdownMenuByVisibleText(text, loanPurposeDropDown);
-        checkYourRate.click();
-    }
-
-    public void gotoGetStartedPage() {
-        webDriver.navigate().to("https://www.credify.tech/funnel/nonDMFunnel");
-    }
+  public void gotoGetStartedPage() {
+    webDriver.navigate().to("https://www.credify.tech/funnel/nonDMFunnel");
+  }
 }
