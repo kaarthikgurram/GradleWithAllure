@@ -71,9 +71,4 @@ public class BrowserActions {
     webElement.clear();
     webElement.sendKeys(textToEnter);
   }
-
-  public void waitForTextToAppear(WebElement element, String textToAppear) {
-    Wait<WebDriver> wait = getWebDriverWait(120);
-    wait.until(ExpectedConditions.textToBePresentInElement(element, textToAppear));
-  }
 }

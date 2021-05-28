@@ -34,7 +34,5 @@ public class CreateAccountPage {
     browserActions.enterTextInTextField(password, AccountContext.getPassword());
     agreementCheckbox.click();
     checkYourRateButton.click();
-    System.out.println(AccountContext.getEmailAddress());
-    System.out.println(AccountContext.getPassword());
   }
 }

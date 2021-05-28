@@ -11,6 +11,7 @@ import com.upgrade.frontend.pages.LoginPage;
 import com.upgrade.frontend.util.browser.BrowserActions;
 import com.upgrade.frontend.util.browser.BrowserWebDriver;
 import com.upgrade.frontend.validation.LoanDetailsValidation;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -47,7 +48,7 @@ public class UpgradeChallengeTest {
   }
 
   @Test
-  public void fillHomePage() {
+  public void upgradeApplication_applyLoan_verifyLoanCreatedAndDisplayed() {
     getStartedPage.gotoGetStartedPage();
     getStartedPage.fillGetStartedPage("Pay off Credit Cards");
     basicInformationPage.fillBasicInformationPage(basicInformationFixture);
@@ -60,5 +61,10 @@ public class UpgradeChallengeTest {
     loginPage.gotoLogInPage();
     loginPage.logInHomePage();
     loanDetailsValidation.validateLoanDetails(loanDetails);
+  }
+
+  @AfterEach
+  public void afterEach() {
+    webDriver.quit();
   }
 }
