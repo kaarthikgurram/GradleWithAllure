@@ -14,7 +14,6 @@ public class UpgradeCodingChallengeApiTests {
   @Autowired
   UpgradeApiClient upgradeApiClient;
 
-  @Autowired
   UpgradeRequestContext upgradeRequestContext;
 
   @Autowired
@@ -23,8 +22,8 @@ public class UpgradeCodingChallengeApiTests {
   @BeforeEach
   public void beforeEach() {
     upgradeApiClient = new UpgradeApiClient();
-    upgradeRequestContext = new UpgradeRequestContext();
     upgardeApiValidation = new UpgradeApiValidation();
+    upgradeRequestContext = new UpgradeRequestContext();
   }
 
   @Test
@@ -34,10 +33,17 @@ public class UpgradeCodingChallengeApiTests {
     upgardeApiValidation.validateApprovedApiResponse(apiResponse);
   }
 
-  @Test
-  public void upgradeApi_wrongPassword_declineWithError() {
-
-    Response apiResponse = upgradeApiClient.upgradeApiPost(upgradeRequestContext.setPassword("wrong"));
-    upgardeApiValidation.validateErrorResponse(apiResponse);
-  }
+//  @Test
+//  public void upgradeApi_wrongPassword_declineWithError() {
+//
+//    Response apiResponse = upgradeApiClient.upgradeApiPost(upgradeRequestContext.password("wrongPassword"));
+//    upgardeApiValidation.validateErrorResponse(apiResponse);
+//  }
+//
+//  @Test
+//  public void upgradeApi_wrongUsername_declineWithError() {
+//
+//    Response apiResponse = upgradeApiClient.upgradeApiPost(upgradeRequestContext.username("wrongUserName"));
+//    upgardeApiValidation.validateErrorResponse(apiResponse);
+//  }
 }

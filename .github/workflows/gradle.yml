@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build: ./gradlew checkstyleMain checkstyleTest
+  build:
 
     runs-on: ubuntu-latest
 
