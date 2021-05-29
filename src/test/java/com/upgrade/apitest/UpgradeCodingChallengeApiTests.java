@@ -33,17 +33,17 @@ public class UpgradeCodingChallengeApiTests {
     upgardeApiValidation.validateApprovedApiResponse(apiResponse);
   }
 
-//  @Test
-//  public void upgradeApi_wrongPassword_declineWithError() {
-//
-//    Response apiResponse = upgradeApiClient.upgradeApiPost(upgradeRequestContext.password("wrongPassword"));
-//    upgardeApiValidation.validateErrorResponse(apiResponse);
-//  }
-//
-//  @Test
-//  public void upgradeApi_wrongUsername_declineWithError() {
-//
-//    Response apiResponse = upgradeApiClient.upgradeApiPost(upgradeRequestContext.username("wrongUserName"));
-//    upgardeApiValidation.validateErrorResponse(apiResponse);
-//  }
+  @Test
+  public void upgradeApi_wrongPassword_declineWithError() {
+
+    Response apiResponse = upgradeApiClient.upgradeApiPost(upgradeRequestContext.password("wrongPassword"));
+    upgardeApiValidation.validateErrorResponse(apiResponse);
+  }
+
+  @Test
+  public void upgradeApi_wrongUsername_declineWithError() {
+
+    Response apiResponse = upgradeApiClient.upgradeApiPost(upgradeRequestContext.username("wrongUserName"));
+    upgardeApiValidation.validateErrorResponse(apiResponse);
+  }
 }
