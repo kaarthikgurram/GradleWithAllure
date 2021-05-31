@@ -14,14 +14,13 @@ public class UpgradeApiValidation {
   public void validateApprovedApiResponse(Response response) throws JSONException {
 
     JSONObject jsonObject = new JSONObject(response.body().asString());
-    JSONArray loansInReview = jsonObject.getJSONArray("loansInReview");
-    JSONArray loanAccountSummaryAto = jsonObject.getJSONArray("loanAccountSummaryAto");
 
     assertEquals(200, response.statusCode());
     assertEquals("Ian", jsonObject.getString("firstName"));
     assertEquals("9114917", jsonObject.getString("userId"));
     assertEquals("34c16f53-38c4-461a-bd14-11fa748d2663", jsonObject.getString("userUuid"));
     assertEquals("FULL", jsonObject.getString("authenticationLevel"));
+    JSONArray loansInReview = jsonObject.getJSONArray("loansInReview");
     assertEquals("9545966", loansInReview.getJSONObject(0).getString("id"));
     assertEquals(
         "230ea84a-7199-41c9-bf38-fff27e35970d", loansInReview.getJSONObject(0).getString("uuid"));
@@ -33,6 +32,7 @@ public class UpgradeApiValidation {
         "2019-08-21T18:18:59.959Z", loansInReview.getJSONObject(0).getString("createDate"));
     assertEquals("null", loansInReview.getJSONObject(0).getString("postIssuanceStatus"));
     assertEquals("null", loansInReview.getJSONObject(0).getString("addon"));
+    JSONArray loanAccountSummaryAto = jsonObject.getJSONArray("loanAccountSummaryAto");
     assertEquals(
         "null", loanAccountSummaryAto.getJSONObject(0).getString("loanAccountNumber"));
     assertEquals(
