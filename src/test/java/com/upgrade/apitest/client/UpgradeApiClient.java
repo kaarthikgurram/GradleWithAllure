@@ -9,12 +9,19 @@ import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
+@Configuration
 public class UpgradeApiClient {
 
   private static final Logger logger = LoggerFactory.getLogger(UpgradeApiClient.class);
+
+  @Value("${upgrade.apiUrl}")
+  private String baseUrl;
 
   public Response upgradeApiPost(UpgradeRequestContext upgradeRequestContext) {
 
@@ -28,7 +35,7 @@ public class UpgradeApiClient {
             .contentType(ContentType.JSON)
             .body(upgradeRequestContext)
             .when()
-            .post("https://credapi.credify.tech/api/brportorch/v2/login")
+            .post(baseUrl)
             .then()
             .contentType(ContentType.JSON)
             .extract()

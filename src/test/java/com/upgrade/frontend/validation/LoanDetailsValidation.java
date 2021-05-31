@@ -1,9 +1,10 @@
 package com.upgrade.frontend.validation;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.upgrade.frontend.fixtures.LoanDetails;
 import com.upgrade.frontend.util.browser.BrowserActions;
 import java.util.concurrent.TimeUnit;
-import junit.framework.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,10 +40,10 @@ public class LoanDetailsValidation {
     System.out.println(loanDetails.getLoanAmount());
     System.out.println(loanDetails.getTerm());
     webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    Assert.assertEquals(loanAmount.getText(), loanDetails.getLoanAmount());
-    Assert.assertEquals(monthlyPayment.getText(), loanDetails.getMonthlyPayment());
-    Assert.assertEquals(monthTerm.getText(), loanDetails.getTerm());
-    Assert.assertEquals(interestRate.getText(), loanDetails.getInterestRate());
-    Assert.assertEquals(apr.getText(), loanDetails.getApr());
+    assertEquals(loanAmount.getText(), loanDetails.getLoanAmount());
+    assertEquals(monthlyPayment.getText(), loanDetails.getMonthlyPayment());
+    assertEquals(monthTerm.getText(), loanDetails.getTerm());
+    assertEquals(interestRate.getText(), loanDetails.getInterestRate());
+    assertEquals(apr.getText(), loanDetails.getApr());
   }
 }

@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: qa
+
+upgrade:
+  webUrl: "https://www.credify.tech/funnel/nonDMFunnel"
+  loginUrl: "https://www.credify.tech/portal/login"
+  apiUrl: "https://credapi.credify.tech/api/brportorch/v2/login"

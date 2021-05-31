@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'checkstyle'
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 checkstyle {
@@ -30,13 +32,14 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-
     //Spring
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.3'
-    testImplementation group: 'org.springframework.boot', name: 'spring-boot-test', version: '1.4.0.RELEASE'
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.5.0'
+//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.3'
+//    testImplementation group: 'org.springframework.boot', name: 'spring-boot-test', version: '1.4.0.RELEASE'
+//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.5.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // Selenium
     implementation "org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6"
@@ -48,12 +51,15 @@ dependencies {
     testImplementation "org.codehaus.groovy:groovy:3.0.6"
 
     //Junit
-    testImplementation group: 'junit', name: 'junit', version: '4.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 
     implementation group: 'org.json', name: 'json', version: '20090211'
-
 }
 
 test {
     useJUnitPlatform()
+    doFirst {
+        systemProperty 'spring.profiles.active', 'qa'
+    }
 }
