@@ -13,7 +13,6 @@ import com.upgrade.frontend.util.browser.BrowserWebDriver;
 import com.upgrade.frontend.validation.LoanDetailsValidation;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 public class UpgradeChallengeTest {
@@ -47,7 +46,7 @@ public class UpgradeChallengeTest {
     loanDetails = new LoanDetails();
   }
 
-  @Test
+  //@Test
   public void upgradeApplication_applyLoan_verifyLoanCreatedAndDisplayed() {
     getStartedPage.gotoGetStartedPage();
     getStartedPage.fillGetStartedPage("Pay off Credit Cards");

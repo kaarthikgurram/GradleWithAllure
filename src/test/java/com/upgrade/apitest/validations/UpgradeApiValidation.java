@@ -46,6 +46,7 @@ public class UpgradeApiValidation {
 
   public void validateErrorResponse(Response response) {
 
+    assertEquals(401, response.statusCode());
     assertEquals("100039", response.jsonPath().get("code").toString());
     assertEquals("INVALID_CREDENTIALS", response.jsonPath().get("codeName"));
     assertEquals(
@@ -54,5 +55,17 @@ public class UpgradeApiValidation {
     assertEquals("false", response.jsonPath().get("retryable").toString());
     assertEquals("NORMAL", response.jsonPath().get("type"));
     assertEquals("UNAUTHORIZED", response.jsonPath().get("httpStatus"));
+  }
+
+  public void validateBadRequest(Response response, String value) {
+
+    assertEquals("0", response.jsonPath().get("code").toString());
+    assertEquals(null, response.jsonPath().get("codeName"));
+    assertEquals(
+        "Invalid request for object: loginRequest, fields [ { " + value + ": null } ], violations [ ]",
+        response.jsonPath().get("message"));
+    assertEquals("false", response.jsonPath().get("retryable").toString());
+    assertEquals(null, response.jsonPath().get("type"));
+    assertEquals("BAD_REQUEST", response.jsonPath().get("httpStatus"));
   }
 }

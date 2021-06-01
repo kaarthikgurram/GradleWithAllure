@@ -2,9 +2,9 @@ package com.upgrade.apitest.fixtures;
 
 public class UpgradeRequestContext {
 
-  public static String username = "coding.challenge.login@upgrade.com";
-  public static String password = "On$3XcgsW#9q";
-  public static String recaptchaToken = "coding_challenge";
+  public String username = "coding.challenge.login@upgrade.com";
+  public String password = "On$3XcgsW#9q";
+  public String recaptchaToken = "coding_challenge";
 
   public UpgradeRequestContext username(String username) {
     this.username = username;
@@ -31,5 +31,20 @@ public class UpgradeRequestContext {
 
   public String getRecaptchaToken() {
     return recaptchaToken;
+  }
+
+  @Override
+  public String toString() {
+    return "UpgradeRequestContext{"
+        + "username='"
+        + username
+        + '\''
+        + ", password='"
+        + password
+        + '\''
+        + ", recaptchaToken='"
+        + recaptchaToken
+        + '\''
+        + '}';
   }
 }
