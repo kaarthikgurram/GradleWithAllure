@@ -62,4 +62,25 @@ test {
     doFirst {
         systemProperty 'spring.profiles.active', 'qa'
     }
+
+    def testLocal = tasks.register("testLocal", Test) {
+        useJUnitPlatform()
+        doFirst {
+            systemProperty 'spring.profiles.active', 'local'
+        }
+    }
+
+    def testDev = tasks.register("testDev", Test) {
+        useJUnitPlatform()
+        doFirst {
+            systemProperty 'spring.profiles.active', 'dev'
+        }
+    }
+
+    def testQA = tasks.register("testQA", Test) {
+        useJUnitPlatform()
+        doFirst {
+            systemProperty 'spring.profiles.active', 'qa'
+        }
+    }
 }

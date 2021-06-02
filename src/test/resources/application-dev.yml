@@ -1,0 +1,5 @@
+#If urls are different in dev environment we can change them here and run directly from command line using task testDev
+upgrade:
+  webUrl: "https://www.credify.tech/funnel/nonDMFunnel"
+  loginUrl: "https://www.credify.tech/portal/login"
+  apiUrl: "https://credapi.credify.tech/api/brportorch/v2/login"

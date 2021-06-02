@@ -96,7 +96,7 @@ public class UpgradeCodingChallengeApiTests {
   }
 
   @Test
-  public void upgradeApi_invalidXcfCorrId_acceptedResponse() throws JSONException {
+  public void upgradeApi_invalidXcfCorrId_acceptedResponse() {
 
     Response apiResponse =
         upgradeApiClient.upgradeApiPost(

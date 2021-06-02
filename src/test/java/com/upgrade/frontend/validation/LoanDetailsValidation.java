@@ -18,16 +18,16 @@ public class LoanDetailsValidation {
   @FindBy(xpath = "//span[contains(@class, 'guKkvw')]")
   private WebElement loanAmount;
 
-  @FindBy(xpath = "//div[contains(@class, 'gIXPbp')]/span[1]")
+  @FindBy(xpath = "(//div[contains(@class, 'number')])[1]")
   private WebElement monthlyPayment;
 
-  @FindBy(xpath = "(//div[@class = 'section--xs'])[1]")
+  @FindBy(xpath = "(//div[contains(@class, 'number')])[2]")
   private WebElement monthTerm;
 
-  @FindBy(xpath = "(//div[@class = 'section--xs'])[2]")
+  @FindBy(xpath = "(//div[contains(@class, 'number')])[3]")
   private WebElement interestRate;
 
-  @FindBy(xpath = "(//div[@class = 'section--xs'])[3]")
+  @FindBy(xpath = "(//div[contains(@class, 'number')])[4]")
   private WebElement apr;
 
   public LoanDetailsValidation(WebDriver webDriver) {
@@ -37,8 +37,6 @@ public class LoanDetailsValidation {
   }
 
   public void validateLoanDetails(LoanDetails loanDetails) {
-    System.out.println(loanDetails.getLoanAmount());
-    System.out.println(loanDetails.getTerm());
     webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     assertEquals(loanAmount.getText(), loanDetails.getLoanAmount());
     assertEquals(monthlyPayment.getText(), loanDetails.getMonthlyPayment());

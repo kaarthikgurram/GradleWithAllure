@@ -32,6 +32,8 @@ public class LoginPage {
   }
 
   public void logInHomePage() {
+    System.out.println(AccountContext.getEmailAddress());
+    System.out.println(AccountContext.getPassword());
     browserActions.enterTextInTextField(emailAddress, AccountContext.getEmailAddress());
     browserActions.enterTextInTextField(password, AccountContext.getPassword());
     browserActions.moveTheCursorToElementAndClick(signIn);

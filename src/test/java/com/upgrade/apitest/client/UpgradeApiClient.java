@@ -22,10 +22,6 @@ public class UpgradeApiClient {
   private String xcfsourceid = "coding-challenge";
   private String xcfcorrid = UUID.randomUUID().toString();
 
-  public UpgradeApiClient() {
-    System.out.println("value of base url is " + baseUrl);
-  }
-
   public Response upgradeApiPost(UpgradeRequestContext upgradeRequestContext) {
     return upgradeApiPost(upgradeRequestContext, xcfsourceid, xcfcorrid);
   }
@@ -46,14 +42,5 @@ public class UpgradeApiClient {
     logger.info("Logging upgrade coding challenge response" + response.prettyPrint());
 
     return response;
-  }
-
-  public String getBaseUrl() {
-    return baseUrl;
-  }
-
-  public void setBaseUrl(String baseUrl) {
-    this.baseUrl = baseUrl;
-    System.out.println("called setter method");
   }
 }
