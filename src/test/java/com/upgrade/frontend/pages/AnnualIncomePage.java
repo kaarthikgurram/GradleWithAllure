@@ -10,13 +10,13 @@ public class AnnualIncomePage {
   private final BrowserActions browserActions;
   private WebDriver webDriver;
 
-  @FindBy(xpath = "//input[@name='borrowerIncome']")
+  @FindBy(name = "borrowerIncome")
   private WebElement annualIncome;
 
-  @FindBy(xpath = "//input[@name='borrowerAdditionalIncome']")
+  @FindBy(name = "borrowerAdditionalIncome")
   private WebElement annualAdditionalIncome;
 
-  @FindBy(xpath = "//button[@type='submit']")
+  @FindBy(xpath = "//button[contains(text(), 'Continue')]")
   private WebElement continueButton;
 
   public AnnualIncomePage(WebDriver webDriver) {

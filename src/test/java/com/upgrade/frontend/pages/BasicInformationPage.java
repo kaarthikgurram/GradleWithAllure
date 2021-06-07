@@ -12,28 +12,28 @@ public class BasicInformationPage {
   private final BrowserActions browserActions;
   private WebDriver webDriver;
 
-  @FindBy(xpath = "//input[@name='borrowerFirstName']")
+  @FindBy(name = "borrowerFirstName")
   private WebElement firstName;
 
-  @FindBy(xpath = "//input[@name='borrowerLastName']")
+  @FindBy(name = "borrowerLastName")
   private WebElement lastName;
 
-  @FindBy(xpath = "//input[@name='borrowerStreet']")
+  @FindBy(name = "borrowerStreet")
   private WebElement homeAddress;
 
-  @FindBy(xpath = "//input[@name='borrowerCity']")
+  @FindBy(name = "borrowerCity")
   private WebElement city;
 
-  @FindBy(xpath = "//input[@name='borrowerState']")
+  @FindBy(name = "borrowerState")
   private WebElement state;
 
-  @FindBy(xpath = "//input[@name='borrowerZipCode']")
+  @FindBy(name = "borrowerZipCode")
   private WebElement zipCode;
 
-  @FindBy(xpath = "//input[@name='borrowerDateOfBirth']")
+  @FindBy(name = "borrowerDateOfBirth")
   private WebElement dateOfBirth;
 
-  @FindBy(xpath = "//button[@type='submit']")
+  @FindBy(xpath = "//button[contains(text(), 'Continue')]")
   private WebElement continueButton;
 
   public BasicInformationPage(WebDriver webDriver) {

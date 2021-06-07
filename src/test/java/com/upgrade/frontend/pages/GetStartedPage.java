@@ -10,13 +10,13 @@ public class GetStartedPage {
   private final BrowserActions browserActions;
   private WebDriver webDriver;
 
-  @FindBy(xpath = "//input[contains(@class, 'bYEvPH ')]")
+  @FindBy(name = "desiredAmount")
   private WebElement loanAmount;
 
-  @FindBy(xpath = "//select[contains(@class, 'kniQaM')]")
+  @FindBy(name = "loan-purpose")
   private WebElement loanPurposeDropDown;
 
-  @FindBy(xpath = "//button[@type='submit']")
+  @FindBy(xpath = "//button[contains(text(), 'Check your rate')]")
   private WebElement checkYourRate;
 
   public GetStartedPage(WebDriver webDriver) {

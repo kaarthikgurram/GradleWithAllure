@@ -11,16 +11,16 @@ public class CreateAccountPage {
   private final BrowserActions browserActions;
   private WebDriver webDriver;
 
-  @FindBy(xpath = "//input[@name='username']")
+  @FindBy(name = "username")
   private WebElement emailAddress;
 
-  @FindBy(xpath = "//input[@name='password']")
+  @FindBy(name = "password")
   private WebElement password;
 
   @FindBy(xpath = "//div[contains(@class, 'gTusOv ')]")
   private WebElement agreementCheckbox;
 
-  @FindBy(xpath = "//button[@type='submit']")
+  @FindBy(xpath = "//button[contains(text(), 'Check Your Rate')]")
   private WebElement checkYourRateButton;
 
   public CreateAccountPage(WebDriver webDriver) {

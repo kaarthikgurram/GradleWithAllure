@@ -28,7 +28,7 @@ public class LoanDetailsPage {
   @FindBy(xpath = "(//div[contains(@class, 'number')])[4]")
   private WebElement apr;
 
-  @FindBy(xpath = "//label[@class = 'header-nav__toggle']")
+  @FindBy(xpath = "//label[contains(text(), 'Menu')]")
   private WebElement menu;
 
   @FindBy(xpath = "//a[text()='Sign Out']")
