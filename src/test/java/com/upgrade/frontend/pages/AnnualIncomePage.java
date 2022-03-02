@@ -25,14 +25,16 @@ public class AnnualIncomePage {
     this.webDriver = webDriver;
   }
 
-  public void fillIncomeDetails() {
+  public AnnualIncomePage fillIncomeDetails() {
 
     browserActions.enterTextInTextField(annualIncome, "120,000");
     browserActions.enterTextInTextField(annualAdditionalIncome, "5000");
+    return this;
   }
 
-  public void clickContinueButton() {
+  public AnnualIncomePage clickContinueButton() {
     browserActions.moveTheCursorToElementAndClick(continueButton);
     browserActions.moveTheCursorToElementAndClick(continueButton);
+    return this;
   }
 }

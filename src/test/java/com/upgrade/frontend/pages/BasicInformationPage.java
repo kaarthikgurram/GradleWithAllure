@@ -42,7 +42,7 @@ public class BasicInformationPage {
     this.webDriver = webDriver;
   }
 
-  public void fillBasicInformationPage(BasicInformationFixture fixture) {
+  public BasicInformationPage fillBasicInformationPage(BasicInformationFixture fixture) {
     browserActions.enterTextInTextField(firstName, fixture.firstName);
     browserActions.enterTextInTextField(lastName, fixture.lastName);
     browserActions.enterTextInTextField(homeAddress, fixture.homeAddress);
@@ -51,9 +51,11 @@ public class BasicInformationPage {
     browserActions.enterTextInTextField(state, fixture.state);
     browserActions.enterTextInTextField(zipCode, fixture.zipCode);
     browserActions.enterTextInTextField(dateOfBirth, fixture.dateOfBirth);
+    return this;
   }
 
-  public void clickContinueButton() {
+  public BasicInformationPage clickContinueButton() {
     browserActions.moveTheCursorToElementAndClick(continueButton);
+    return this;
   }
 }

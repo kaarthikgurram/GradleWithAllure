@@ -51,10 +51,8 @@ public class UpgradeChallengeTest {
   public void upgradeApplication_applyLoan_verifyLoanCreatedAndDisplayed() {
     getStartedPage.gotoGetStartedPage();
     getStartedPage.fillGetStartedPage("Pay off Credit Cards");
-    basicInformationPage.fillBasicInformationPage(basicInformationFixture);
-    basicInformationPage.clickContinueButton();
-    annualIncomePage.fillIncomeDetails();
-    annualIncomePage.clickContinueButton();
+    basicInformationPage.fillBasicInformationPage(basicInformationFixture).clickContinueButton();
+    annualIncomePage.fillIncomeDetails().clickContinueButton();
     createAccountPage.createAccount();
     loanDetails = loanAmountPage.fetchLoanDetails();
     loanAmountPage.signOut();

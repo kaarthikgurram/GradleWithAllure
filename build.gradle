@@ -3,7 +3,17 @@ plugins {
     id 'checkstyle'
     id 'org.springframework.boot' version '2.4.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'io.qameta.allure' version '2.5' // Latest Plugin Version
 }
+allure {
+    autoconfigure = true
+    version = '2.17.3'  // Latest Allure Version
+    useJUnit5 {
+        version = '2.17.3' // Latest Allure Version
+    }
+}
+
+sourceCompatibility = 1.8
 
 checkstyle {
     configFile = rootProject.file('config/checkstyle/checkstyle.xml')
@@ -28,21 +38,18 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
     //Spring
-//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.3'
-//    testImplementation group: 'org.springframework.boot', name: 'spring-boot-test', version: '1.4.0.RELEASE'
-//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.5.0'
-
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // Selenium
-    implementation "org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6"
+    testImplementation "org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6"
 
     // Rest assured
     testImplementation "io.rest-assured:rest-assured:4.3.0"
@@ -54,7 +61,9 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 
-    implementation group: 'org.json', name: 'json', version: '20090211'
+    testImplementation group: 'org.json', name: 'json', version: '20090211'
+
+    testImplementation group: 'io.qameta.allure', name: 'allure-gradle', version: '2.5'
 }
 
 test {

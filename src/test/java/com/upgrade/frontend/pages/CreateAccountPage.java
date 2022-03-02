@@ -17,7 +17,7 @@ public class CreateAccountPage {
   @FindBy(name = "password")
   private WebElement password;
 
-  @FindBy(xpath = "//div[contains(@class, 'gTusOv ')]")
+  @FindBy(xpath = "//div[contains(@class, 'sc-kTCsyW')]")
   private WebElement agreementCheckbox;
 
   @FindBy(xpath = "//button[contains(text(), 'Check Your Rate')]")
