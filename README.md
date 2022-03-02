@@ -4,7 +4,7 @@ This repo contains integration tests for both front end and back end application
 ##Requirements
 
     Windows machine/server
-    Java JDK 11 or above version
+    Java JDK 13 or above version
     Chrome Installed
 
 ## Commands to run tests locally/QA/DEV
@@ -56,3 +56,6 @@ compatible with project like line number, imports ordering etc.
 * Construction of Pojos in the repo is done using Java builder pattern. This gives the user ability to improve the 
   readability and sending dynamic values in test cases reducing the burden of creating whole object again.
   
+
+## Generate Allure reports
+Allure Server C:\karthik\upgrade\upgrade\build\allure-results
