@@ -58,4 +58,4 @@ compatible with project like line number, imports ordering etc.
   
 
 ## Generate Allure reports
-Allure Server C:\karthik\upgrade\upgrade\build\allure-results
+Allure Serve C:\karthik\upgrade\upgrade\build\allure-results
